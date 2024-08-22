@@ -1,0 +1,59 @@
+#container{
+width: 100vw;
+height: 100vh;
+background-image: url(../../public/back.png);
+background-size: cover;
+}
+h1 {
+  text-align: center; 
+  font-style: italic;
+  color: rgb(131, 250, 116);
+}
+th {
+  font-size: x-large;
+  background-color: #FFA400;
+  border-bottom: 3px;
+  padding: 10px;
+  color: #0C5AA6;
+}
+td {
+  border-bottom: 3px;
+  padding: 10px;
+}
+p {
+  font-size: 30px;
+  font-family: Verdana;
+}
+div {
+  text-align: center;
+}
+.classColor2{
+  color:azure;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: linear-gradient(
+    to right,
+    hsl(270, 83%, 53%),
+    hsl(0, 89%, 44%)
+  );
+}
+
+.classColor{
+  color: darkorange;
+}
+.classColor3{
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  width: 200px;
+  height: 50px;
+  background-color: #009E8E;
+  color: aliceblue;
+  border-radius: 0.8em 0 0.8em 0;
+  border-color: rgb(173, 206, 245);
+}
+.buttonDelete{
+  margin: 10px;
+  background-color: rgb(238, 119, 119);
+}
+

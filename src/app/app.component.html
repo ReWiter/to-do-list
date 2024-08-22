@@ -1,0 +1,70 @@
+<div id="container">
+  <h1>Список дел</h1>
+  <div style="position: relative">
+    <div class="classColor">
+      <p>
+        <label>Задача:</label><br />
+        <textarea class="classColor2" type="text" [(ngModel)]="text"></textarea>
+      </p>
+      <p>
+        <label>Дата:</label><br />
+        <input class="classColor2" type="Date" [(ngModel)]="data" />
+      </p>
+    </div>
+    <button class="classColor3" (click)="addItem(text, data, checked)">
+      Добавить
+    </button>
+    <button
+      style="margin-left: 20px"
+      class="classColor3"
+      (click)="removeItems()"
+    >
+      Очистить список</button
+    ><br />
+    <button class="classColor3" (click)="activTask()">Активные задачи</button>
+    <button
+      style="margin: 20px 0 0 20px"
+      class="classColor3"
+      (click)="inactivTask()"
+    >
+      Выполненные задачи
+    </button>
+
+    <div style="display: flex; justify-content: center">
+      <br /><br />
+      <table
+        border="3"
+        style="border-color: aqua; margin: 20px; align-items: center"
+      >
+        <tr>
+          <th style="width: 600px; height: 30px">З а д а ч а</th>
+          <th style="width: 100px; height: 30px">Дата</th>
+          <th>Статус</th>
+          <th style="width: 100px; height: 30px">Удалить</th>
+        </tr>
+        <tbody>
+          @for (item of items; track $index) {
+          <tr style="background-color: #ffe373">
+            <td
+              [ngStyle]="
+                item.checked ? { 'text-decoration': 'line-through' } : {}
+              "
+            >
+              <label style="cursor: pointer">{{ item.task }}</label>
+            </td>
+            <td>
+              <label style="cursor: pointer">{{ item.data }}</label>
+            </td>
+            <td>
+              <input [(ngModel)]="item.checked" type="checkbox" />
+            </td>
+            <button class="buttonDelete" (click)="removeItem(item)">
+              Удалить
+            </button>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

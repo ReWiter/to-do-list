@@ -1,0 +1,47 @@
+{
+    "version": 1,
+    "projects": {
+        "todo-list": {
+            "projectType": "application",
+            "root": "",
+            "sourceRoot": "src",
+            "architect" : {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/todo-list",
+                        "index": "src/index.html",
+                        "main": "src/main.ts",
+                        "polyfills": ["zone.js"],
+                        "tsConfig": "tsconfig.json",
+                        "aot": true
+                    },
+                
+                "configurations": {
+                    "production":{
+                        "optimization":true,
+                        "outputHashing": "all",
+                        "sourceMap": false,
+                        "namedChunks": false,
+                        "vendorChunk": false,
+                        "buildOptimizer": true
+                     },
+                     "development": {
+                        "optimization":false,
+                        "sourceMap":true
+                     }
+                    }
+                },
+                "serve":{
+                    "builder":"@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "buildTarget": "todo-list:build"
+                    }
+                }
+            }
+        }
+    },
+    "cli": {
+      "analytics": "926827f7-a017-43d9-9513-552bab42c0af"
+    }
+}
